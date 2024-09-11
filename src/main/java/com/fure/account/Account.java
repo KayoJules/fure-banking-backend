@@ -1,5 +1,6 @@
 package com.fure.account;
 
+import com.fure.user.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,6 +18,9 @@ public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @ManyToOne
+    private User user;
 
     private BigDecimal balance;
 }
